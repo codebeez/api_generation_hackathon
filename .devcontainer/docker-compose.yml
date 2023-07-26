@@ -1,0 +1,15 @@
+version: '2'
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  db:
+    build:
+      context: .
+      dockerfile: db_Dockerfile
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
