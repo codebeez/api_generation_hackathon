@@ -10,4 +10,3 @@ Using an OpenAPI spec we can generate an API
 
 ## Generating documentation from code
 Using the API code we can generate an OpenAPI spec to document our API and to let others test it.
-

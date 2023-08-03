@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  title: Person API
+  version: 1.0.0
+paths:
+  /persons:
+    get:
+      summary: Retrieve all persons
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+    post:
+      summary: Create a new person
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+      responses:
+        '201':
+          description: Person created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+  /persons/{id}:
+    get:
+      summary: Retrieve a specific person
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID of the person to retrieve
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+    put:
+      summary: Update a specific person
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID of the person to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+      responses:
+        '200':
+          description: Person updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+    delete:
+      summary: Delete a specific person
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID of the person to delete
+      responses:
+        '204':
+          description: Person deleted successfully
+
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        BusinessEntityID:
+          type: integer
+        PersonType:
+          type: string
+        NameStyle:
+          type: boolean
+        Title:
+          type: string
+        FirstName:
+          type: string
+        MiddleName:
+          type: string
+        LastName:
+          type: string
+        Suffix:
+          type: string
+        EmailPromotion:
+          type: integer
+        AdditionalContactInfo:
+          type: string
+        Demographics:
+          type: string
+        rowguid:
+          type: string
+        ModifiedDate:
+          type: string
+          format: date-time
+      required:
+        - BusinessEntityID
+        - PersonType
+        - NameStyle
+        - FirstName
+        - LastName
+        - EmailPromotion
+        - rowguid
+        - ModifiedDate
