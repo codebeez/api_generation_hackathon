@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "api-generation-hackathon"
+version = "0.1.0"
+description = "Generating a large amounts of APIs from a datsource"
+authors = ["Vito Minheere <vito@codebeez.nl>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+black = "^23.1.0"
+mypi = "^0.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
