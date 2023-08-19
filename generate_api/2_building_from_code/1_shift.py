@@ -6,10 +6,10 @@ import psycopg2
 app = FastAPI()
 
 # Database configuration
-DB_HOST = 'your_db_host'
-DB_NAME = 'your_db_name'
-DB_USER = 'your_db_user'
-DB_PASSWORD = 'your_db_password'
+DB_HOST = 'db'
+DB_NAME = 'Adventureworks'
+DB_USER = 'postgres'
+DB_PASSWORD = 'postgres'
 
 # Connect to the database
 def create_connection():
@@ -18,7 +18,8 @@ def create_connection():
             host=DB_HOST,
             database=DB_NAME,
             user=DB_USER,
-            password=DB_PASSWORD
+            password=DB_PASSWORD,
+            port=5432
         )
         return connection
     except psycopg2.Error as error:
@@ -46,7 +47,7 @@ def get_shifts():
     if connection:
         try:
             with connection.cursor() as cursor:
-                cursor.execute("SELECT * FROM Shift;")
+                cursor.execute("SELECT * FROM HumanResources.Shift;")
                 shifts = cursor.fetchall()
                 return [shift_to_model(shift) for shift in shifts]
         except psycopg2.Error as error:
@@ -64,7 +65,7 @@ def create_shift(shift: Shift):
     if connection:
         try:
             with connection.cursor() as cursor:
-                cursor.execute("INSERT INTO Shift (Name, StartTime, EndTime) VALUES (%s, %s, %s) RETURNING *;",
+                cursor.execute("INSERT INTO HumanResources.Shift (Name, StartTime, EndTime) VALUES (%s, %s, %s) RETURNING *;",
                                (shift.Name, shift.StartTime, shift.EndTime))
                 shift = cursor.fetchone()
                 connection.commit()
@@ -85,7 +86,7 @@ def update_shift(shift_id: int, shift: Shift):
     if connection:
         try:
             with connection.cursor() as cursor:
-                cursor.execute("UPDATE Shift SET Name=%s, StartTime=%s, EndTime=%s WHERE ShiftID=%s RETURNING *;",
+                cursor.execute("UPDATE HumanResources.Shift SET Name=%s, StartTime=%s, EndTime=%s WHERE ShiftID=%s RETURNING *;",
                                (shift.Name, shift.StartTime, shift.EndTime, shift_id))
                 shift = cursor.fetchone()
                 connection.commit()
@@ -109,7 +110,7 @@ def delete_shift(shift_id: int):
     if connection:
         try:
             with connection.cursor() as cursor:
-                cursor.execute("DELETE FROM Shift WHERE ShiftID=%s;", (shift_id,))
+                cursor.execute("DELETE FROM HumanResources.Shift WHERE ShiftID=%s;", (shift_id,))
                 connection.commit()
                 return {"message": "Shift deleted successfully"}
         except psycopg2.Error as error:
