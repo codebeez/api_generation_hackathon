@@ -1,11 +1,14 @@
 [tool.poetry]
 name = "api-generation-hackathon"
 version = "0.1.0"
-description = "Generating a large amounts of APIs from a datsource"
+description = "Generating a large amounts of APIs from a datasource"
 authors = ["Vito Minheere <vito@codebeez.nl>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+psycopg2 = "^2.9.7"
+fastapi = "^0.101.1"
+openapi-python-client = "^0.15.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
