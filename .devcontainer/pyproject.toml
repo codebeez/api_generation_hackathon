@@ -8,7 +8,7 @@ authors = ["Vito Minheere <vito@codebeez.nl>"]
 python = "^3.10"
 psycopg2 = "^2.9.7"
 fastapi = "^0.101.1"
-openapi-python-client = "^0.15.1"
+fastapi-code-generator = "^0.4.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
