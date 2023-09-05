@@ -5,6 +5,8 @@ The premise is that you are tasked with creating APIs for each table in a databa
 The example data is the AdventureWorks dataset from Microsoft which contains 68 tables.
 That amount is way too much to create by hand so we are going to look for a way to generate these basic CRUD APIs.
 
+All commands are to be used in the directory they are mentioned in. The commands from *1_building_from_spec* you would run in `generate_api/1_building_from_spec/`
+
 ## Generating API code from Documentation
 Using an OpenAPI spec we can generate an API
 
