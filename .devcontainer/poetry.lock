@@ -2,24 +2,24 @@
 
 [[package]]
 name = "anyio"
-version = "3.7.1"
+version = "4.0.0"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "anyio-3.7.1-py3-none-any.whl", hash = "sha256:91dee416e570e92c64041bd18b900d1d6fa78dff7048769ce5ac5ddad004fbb5"},
-    {file = "anyio-3.7.1.tar.gz", hash = "sha256:44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"},
+    {file = "anyio-4.0.0-py3-none-any.whl", hash = "sha256:cfdb2b588b9fc25ede96d8db56ed50848b0b649dca3dd1df0b11f683bb9e0b5f"},
+    {file = "anyio-4.0.0.tar.gz", hash = "sha256:f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"},
 ]
 
 [package.dependencies]
-exceptiongroup = {version = "*", markers = "python_version < \"3.11\""}
+exceptiongroup = {version = ">=1.0.2", markers = "python_version < \"3.11\""}
 idna = ">=2.8"
 sniffio = ">=1.1"
 
 [package.extras]
-doc = ["Sphinx", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme (>=1.2.2)", "sphinxcontrib-jquery"]
-test = ["anyio[trio]", "coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "mock (>=4)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
-trio = ["trio (<0.22)"]
+doc = ["Sphinx (>=7)", "packaging", "sphinx-autodoc-typehints (>=1.2.0)"]
+test = ["anyio[trio]", "coverage[toml] (>=7)", "hypothesis (>=4.0)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
+trio = ["trio (>=0.22)"]
 
 [[package]]
 name = "argcomplete"
@@ -283,16 +283,6 @@ trio = ["trio (>=0.14,<0.23)"]
 wmi = ["wmi (>=1.5.1,<2.0.0)"]
 
 [[package]]
-name = "docopt"
-version = "0.6.1"
-description = "Pythonic argument parser, that will make you smile"
-optional = false
-python-versions = "*"
-files = [
-    {file = "docopt-0.6.1.tar.gz", hash = "sha256:71ad940a773fbc23be6093e9476ad57b2ecec446946a28d30127501f3b29aa35"},
-]
-
-[[package]]
 name = "email-validator"
 version = "2.0.0.post2"
 description = "A robust email address syntax and deliverability validation library."
@@ -361,21 +351,6 @@ typed-ast = {version = ">=1.5.0", markers = "python_full_version >= \"3.9.8\""}
 typer = {version = ">=0.2.1,<0.10.0", extras = ["all"]}
 
 [[package]]
-name = "flask"
-version = "0.10.1"
-description = "A microframework based on Werkzeug, Jinja2 and good intentions"
-optional = false
-python-versions = "*"
-files = [
-    {file = "Flask-0.10.1.tar.gz", hash = "sha256:4c83829ff83d408b5e1d4995472265411d2c414112298f2eb4b359d9e4563373"},
-]
-
-[package.dependencies]
-itsdangerous = ">=0.21"
-Jinja2 = ">=2.4"
-Werkzeug = ">=0.7"
-
-[[package]]
 name = "genson"
 version = "1.2.2"
 description = "GenSON is a powerful, user-friendly JSON Schema generator."
@@ -384,33 +359,6 @@ python-versions = "*"
 files = [
     {file = "genson-1.2.2.tar.gz", hash = "sha256:8caf69aa10af7aee0e1a1351d1d06801f4696e005f06cedef438635384346a16"},
 ]
-
-[[package]]
-name = "gitdb"
-version = "4.0.10"
-description = "Git Object Database"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "gitdb-4.0.10-py3-none-any.whl", hash = "sha256:c286cf298426064079ed96a9e4a9d39e7f3e9bf15ba60701e95f5492f28415c7"},
-    {file = "gitdb-4.0.10.tar.gz", hash = "sha256:6eb990b69df4e15bad899ea868dc46572c3f75339735663b81de79b06f17eb9a"},
-]
-
-[package.dependencies]
-smmap = ">=3.0.1,<6"
-
-[[package]]
-name = "gitpython"
-version = "0.3.2.RC1"
-description = "Python Git Library"
-optional = false
-python-versions = "*"
-files = [
-    {file = "GitPython-0.3.2.RC1.tar.gz", hash = "sha256:fd6786684a0d0dd7ebb961da754e3312fafe0c8e88f55ceb09858aa0af6094e0"},
-]
-
-[package.dependencies]
-gitdb = ">=0.5.1"
 
 [[package]]
 name = "h11"
@@ -535,17 +483,6 @@ colors = ["colorama (>=0.4.3)"]
 pipfile-deprecated-finder = ["pip-shims (>=0.5.2)", "pipreqs", "requirementslib"]
 plugins = ["setuptools"]
 requirements-deprecated-finder = ["pip-api", "pipreqs"]
-
-[[package]]
-name = "itsdangerous"
-version = "2.1.2"
-description = "Safely pass data to untrusted environments and back."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "itsdangerous-2.1.2-py3-none-any.whl", hash = "sha256:2c2349112351b88699d8d4b6b075022c0808887cb7ad10069318a8b0bc88db44"},
-    {file = "itsdangerous-2.1.2.tar.gz", hash = "sha256:5dbbc68b317e5e42f327f9021763545dc3fc3bfe22e6deb96aaf1fc38874156a"},
-]
 
 [[package]]
 name = "jinja2"
@@ -740,22 +677,6 @@ files = [
 ]
 
 [[package]]
-name = "mypi"
-version = "0.0.3"
-description = "An api that can automatically build and serve python packages that are hosted on github"
-optional = false
-python-versions = "*"
-files = [
-    {file = "mypi-0.0.3.tar.gz", hash = "sha256:4f30dabdd0bb74124694d56354d45b6521c9de34845a1a001957ebb5398a9741"},
-]
-
-[package.dependencies]
-docopt = "0.6.1"
-Flask = "0.10.1"
-GitPython = "0.3.2.RC1"
-semantic_version = "2.3.0"
-
-[[package]]
 name = "mypy-extensions"
 version = "1.0.0"
 description = "Type system extensions for programs checked with the mypy type checker."
@@ -858,13 +779,13 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4)", "pytest-co
 
 [[package]]
 name = "pluggy"
-version = "1.2.0"
+version = "1.3.0"
 description = "plugin and hook calling mechanisms for python"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "pluggy-1.2.0-py3-none-any.whl", hash = "sha256:c2fd55a7d7a3863cba1a013e4e2414658b1d07b6bc57b3919e0c63c9abb99849"},
-    {file = "pluggy-1.2.0.tar.gz", hash = "sha256:d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"},
+    {file = "pluggy-1.3.0-py3-none-any.whl", hash = "sha256:d89c696a773f8bd377d18e5ecda92b7a3793cbe66c87060a6fb58c7b6e1061f7"},
+    {file = "pluggy-1.3.0.tar.gz", hash = "sha256:cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"},
 ]
 
 [package.extras]
@@ -1036,13 +957,13 @@ tests = ["pytest"]
 
 [[package]]
 name = "pytest"
-version = "7.4.0"
+version = "7.4.1"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pytest-7.4.0-py3-none-any.whl", hash = "sha256:78bf16451a2eb8c7a2ea98e32dc119fd2aa758f1d5d66dbf0a59d69a3969df32"},
-    {file = "pytest-7.4.0.tar.gz", hash = "sha256:b4bf8c45bd59934ed84001ad51e11b4ee40d40a1229d2c79f9c592b0a3f6bd8a"},
+    {file = "pytest-7.4.1-py3-none-any.whl", hash = "sha256:460c9a59b14e27c602eb5ece2e47bec99dc5fc5f6513cf924a7d03a578991b1f"},
+    {file = "pytest-7.4.1.tar.gz", hash = "sha256:2f2301e797521b23e4d2585a0a3d7b5e50fdddaaf7e7d6773ea26ddb17c213ab"},
 ]
 
 [package.dependencies]
@@ -1209,16 +1130,6 @@ files = [
 ]
 
 [[package]]
-name = "semantic-version"
-version = "2.3.0"
-description = "A library implementing the 'SemVer' scheme."
-optional = false
-python-versions = "*"
-files = [
-    {file = "semantic_version-2.3.0.tar.gz", hash = "sha256:19723ccc0d7ac93fa5af5ce680e0ad0781350d3e17480da9655817bd52ce937c"},
-]
-
-[[package]]
 name = "shellingham"
 version = "1.5.3"
 description = "Tool to Detect Surrounding Shell"
@@ -1238,17 +1149,6 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 files = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
-]
-
-[[package]]
-name = "smmap"
-version = "5.0.0"
-description = "A pure Python implementation of a sliding window memory map manager"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "smmap-5.0.0-py3-none-any.whl", hash = "sha256:2aba19d6a040e78d8b09de5c57e96207b09ed71d8e55ce0959eeee6c8e190d94"},
-    {file = "smmap-5.0.0.tar.gz", hash = "sha256:c840e62059cd3be204b0c9c9f74be2c09d5648eddd4580d9314c3ecde0b30936"},
 ]
 
 [[package]]
@@ -1413,24 +1313,7 @@ secure = ["certifi", "cryptography (>=1.9)", "idna (>=2.0.0)", "pyopenssl (>=17.
 socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
-[[package]]
-name = "werkzeug"
-version = "2.3.7"
-description = "The comprehensive WSGI web application library."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "werkzeug-2.3.7-py3-none-any.whl", hash = "sha256:effc12dba7f3bd72e605ce49807bbe692bd729c3bb122a3b91747a6ae77df528"},
-    {file = "werkzeug-2.3.7.tar.gz", hash = "sha256:2b8c0e447b4b9dbcc85dd97b6eeb4dcbaf6c8b6c3be0bd654e25553e0a2157d8"},
-]
-
-[package.dependencies]
-MarkupSafe = ">=2.1.1"
-
-[package.extras]
-watchdog = ["watchdog (>=2.3)"]
-
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "dde08015ef20bd2d3b7292386b179359bab4b33278ffbda2cedeed808c296c5e"
+content-hash = "a6d753279940b26799a6a450f43ee45cd2f47cb70bfc55988c98cdf4e931a730"

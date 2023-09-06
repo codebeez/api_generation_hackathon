@@ -19,7 +19,6 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "GitHub.copilot",
-        "ms-azuretools.vscode-docker"
     ],
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": []
