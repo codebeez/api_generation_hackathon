@@ -4,3 +4,5 @@ The fastest way would be to use an LLM Model such as ChatGPT, Bard, Starcoder or
 
 Another method is to find a package that can create the spec from a Python model. For this you would need to generate the model from the database.
 The package https://github.com/awtkns/fastapi-crudrouter could help with creating the code afterwards
+
+See the file `1_query_metadata.py` for example code to query the database
